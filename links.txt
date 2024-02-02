@@ -1,0 +1,5 @@
+API: https://developer.marvel.com/docs#!/public/getCreatorCollection_get_0
+HTTP CODES: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
+MD%: https://www.geeksforgeeks.org/md5-hash-python/
+No request count    : https://pypi.org/project/marvel/
+YT how to use marvel API: https://www.youtube.com/watch?v=CCwm9-7dy04&ab_channel=CodeFirstwithHala
