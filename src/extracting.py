@@ -4,6 +4,8 @@ from keys import PUBLIC_KEY, PRIVATE_KEY
 
 
 marvel = Marvel(PUBLIC_KEY= PUBLIC_KEY, PRIVATE_KEY=PRIVATE_KEY)
+
+
 # Avengers hero list:
 avengers_heroes = [
     'Scarlet Witch', 'Wasp', 
@@ -259,7 +261,7 @@ def transfer_class_df(x):
         if x in value:
             return key
 
-
+"""
 # Calling the function to extract the data
 marvel_all_characters_df = get_character(marvel_all_characters)
 
@@ -278,4 +280,4 @@ class_marvel.update(class_hero)
 # DF receive the attribute value in a new column by the name
 marvel_all_characters_df["Class"] = marvel_all_characters_df["Name"].apply(transfer_class_df)
 marvel_all_characters_df
-
+"""
