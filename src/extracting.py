@@ -1,8 +1,9 @@
 import pandas as pd
 from marvel import Marvel
+from keys import PUBLIC_KEY, PRIVATE_KEY
 
 
-
+marvel = Marvel(PUBLIC_KEY= PUBLIC_KEY, PRIVATE_KEY=PRIVATE_KEY)
 # Avengers hero list:
 avengers_heroes = [
     'Scarlet Witch', 'Wasp', 
@@ -162,7 +163,7 @@ marvel_all_characters = [
   ]
 
 
-def get_character(ave, marvel):
+def get_character(ave):
     """ summary:
         1. Gets a value from the characters list
         2. Extract the data from API
