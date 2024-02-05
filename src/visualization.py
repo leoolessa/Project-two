@@ -85,7 +85,13 @@ def add_conditial(variable, principal_column, reference_column):
     return cond
 
 
-
+def visual_plot(variable, x_column, y_column, x_lable, y_lable, title ):
+    sns.barplot(x=x_column, y=y_column, data=variable, palette="magma")
+    plt.xlabel(x_lable)
+    plt.ylabel(y_lable)
+    plt.title(title)
+    plt.xticks(rotation=45, ha='right')
+    plt.show()
 
 
 # Calling the sort functions
@@ -111,25 +117,8 @@ top_8_avengers_world = Filter_comic_class(top_comics_avengers_world, 'Name', 'Co
 
 
 # Visualization
-barplot = sns.barplot(x="Name", y="Comics", data=top_avengers, palette="magma")
-plt.xlabel('Name')
-plt.ylabel('Number of Comics')
-plt.title('The Top 8 Avengers with more comics')
-plt.xticks(rotation=45, ha='right')
-plt.show()
+visual_plot(top_avengers, "Name", "Comics", "Name", "Number of Comics", 'The Top 8 Avengers with more comics')
 
+visual_plot(top_villain, "Name", "Comics", "Name", "Number of Comics", 'The Top 8 Avengers Villains with more comics')
 
-barplot = sns.barplot(x="Name", y="Comics", data=top_villain, palette="magma")
-plt.xlabel('Name')
-plt.ylabel('Number of Comics')
-plt.title('The Top 8 Avengers with more comics')
-plt.xticks(rotation=45, ha='right')
-plt.show()
-
-
-barplot = sns.barplot(x="Name", y="Comics", data=top_8_avengers_world, palette="magma")
-plt.xlabel('Name')
-plt.ylabel('Number of Comics')
-plt.title("The Top 8 in Avenger's world with more comics")
-plt.xticks(rotation=45, ha='right')
-plt.show()
+visual_plot(top_8_avengers_world, "Name", "Comics", "Name", "Number of Comics", "The Top 8 in Avenger's world with more comics" )

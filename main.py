@@ -1,10 +1,8 @@
 import pandas as pd
 import matplotlib.pyplot as plt
-import json
 from marvel import Marvel
 import seaborn as sns
 from keys import PUBLIC_KEY, PRIVATE_KEY
-
 
 import src.extracting as ext
 import src.transforming as tr
@@ -16,14 +14,14 @@ import src.visualization as viz
 
 # 1. Extracting
 marvel = Marvel(PUBLIC_KEY= PUBLIC_KEY, PRIVATE_KEY=PRIVATE_KEY)
-characters = marvel.characters
+#characters = marvel.characters
 
 # Calling the function to extract the data
-marvel_all_characters_df = ext.get_character(marvel_all_characters)
+marvel_all_characters_df = ext.get_character(ext.marvel_all_characters, marvel)
 
 # Joing all the lists
-villains_team = ext.joing_teams(avengers_villains, xmen_villains)
-heroes_team = ext.joing_teams(xmen_heroes, avengers_heroes)
+villains_team = ext.joing_teams(ext.avengers_villains, ext.xmen_villains)
+heroes_team = ext.joing_teams(ext.xmen_heroes, ext.avengers_heroes)
 
 # Calling the function add_class
 class_hero = ext.add_class_hero(heroes_team)
