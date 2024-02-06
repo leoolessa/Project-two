@@ -8,6 +8,7 @@ marvel = Marvel(PUBLIC_KEY= PUBLIC_KEY, PRIVATE_KEY=PRIVATE_KEY)
 
 # Avengers hero list:
 avengers_heroes = [
+    'Spider-Man',
     'Scarlet Witch', 'Wasp', 
     'Black Widow', 'Hulk', 
     'Hawkeye', 'Vision', 
@@ -102,6 +103,7 @@ xmen_heroes = [
 
 # All Marvel characters:
 marvel_all_characters = [
+  'Spider-Man',
   'Scarlet Witch', 'Wasp',
   'Black Widow', 'Hulk',
   'Hawkeye', 'Vision',
@@ -193,7 +195,7 @@ def get_character(ave):
 
 
 def joing_teams(h, v):
-    """ summar:
+    """ summary:
         1. Gets the value from the lists
         2. Join the values from the list
         3. Return a list with two lists in
@@ -209,7 +211,7 @@ def joing_teams(h, v):
     return new_c 
 
 def add_class_hero(x):
-    """summar:
+    """summary:
         1. Get the list of hero teams          
         2. Give an attribute to every value from the list: 
             - 'Avengers', 'X-Men','X-Men-Avengers'
@@ -229,7 +231,7 @@ def add_class_hero(x):
 
 
 def add_class_villain(x):
-    """summar:
+    """summary:
         1. Get the list of villain teams          
         2. Give an attribute to every value from the list: 
             - 'Villain_Avengers', 'Villain_X-Men'
@@ -260,6 +262,7 @@ def transfer_class_df(x):
     for key, value in class_marvel.items():
         if x in value:
             return key
+
 
 """
 # Calling the function to extract the data

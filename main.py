@@ -13,6 +13,7 @@ import src.visualization as viz
 
 
 # 1. Extracting
+
 # Calling the function to extract the data
 marvel_all_characters_df = ext.get_character(ext.marvel_all_characters)
 
@@ -32,10 +33,7 @@ class_marvel.update(class_hero)
 marvel_all_characters_df["Class"] = marvel_all_characters_df["Name"].apply(ext.transfer_class_df)
 
 
-
-
 # Visualization
-
 
 # Calling the sort functions
 avengers_hero_sort = viz.sort_one_column(marvel_all_characters_df,'Class', 'Avengers')

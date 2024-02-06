@@ -93,6 +93,7 @@ def visual_plot(variable, x_column, y_column, x_lable, y_lable, title ):
     plt.xticks(rotation=45, ha='right')
     plt.show()
 
+
 """
 # Calling the sort functions
 avengers_hero_sort = sort_one_column(marvel_all_characters_df,'Class', 'Avengers')
