@@ -2,7 +2,6 @@
 # %%
 import pandas as pd
 import matplotlib.pyplot as plt
-import json
 from marvel import Marvel
 import seaborn as sns
 from keys import PUBLIC_KEY, PRIVATE_KEY
@@ -378,7 +377,7 @@ def get_character(ave):
 
 marvel_all_characters_df = get_character(marvel_all_characters)
 
-
+# funcao para juntas listas
 def joing_teams(h, v):
     new_c = []
     new_c.append(v)
@@ -395,8 +394,7 @@ heroes_team = joing_teams(xmen_heroes, avengers_heroes)
 
 marvel_char = joing_teams(marvel_villains, marvel_heroes)
 
-
-
+# funcao para classificar os personagens das listas de herois
 def add_class_hero(x):
     char_ = {'Avengers':[], 'X-Men':[],'X-Men-Avengers':[] }
     char_['Avengers'] = x[0]
@@ -406,6 +404,7 @@ def add_class_hero(x):
 
 
 
+# funcao para classificar os personagens das listas de viloes
 
 def add_class_villain(x):
     char_ = {'Villain_Avengers':[], 'Villain_X-Men':[]}
@@ -416,17 +415,15 @@ def add_class_villain(x):
 
 class_hero = add_class_hero(heroes_team)
 
-
-
 class_villains = add_class_villain(villains_team)
 
-
-
+# dicionario recebendo as listas ja classificadas
 class_marvel = class_villains.copy()
 class_marvel.update(class_hero)
 class_marvel 
 
 
+# funcao para implementar a coluna Class no dataframe ja existente
 def transfer_class_df(x):
     for key, value in class_marvel.items():
         if x in value:
@@ -437,28 +434,28 @@ marvel_all_characters_df["Class"] = marvel_all_characters_df["Name"].apply(trans
 
 
 
-# funcao que filtra coluna por valor, Exemplo: 
-    # conditional = marvel_all_characters_df[marvel_all_characters_df['Class'] == 'Villain_Avengers']
+# funcao que filtra coluna por valor 
+    
 def sort_one_columns(df, column, column_value):
     sort = df[df[column] == column_value].drop_duplicates()
     return sort
 
 
-# funcao que filtra uma coluna por diferentes valores, Exemplo: 
-    # conditional = marvel_all_characters_df[(marvel_all_characters_df['Class'] == 'Avengers') | (marvel_all_characters_df['Class'] == 'Villain_Avengers')]
+# funcao que filtra uma coluna por diferentes valores 
+    
 def sort_two_columns(df, column, column_one_value, column_two_value):
     sort = df[(df[column] == column_one_value) | (df[column] == column_two_value)].drop_duplicates()
     return sort
 
 
-# funcao para aplicar uma condicional pegando os 5 maiores valores de uma coluna Exemplo: 
-    # top_comics_avengers_villain_names = conditional.nlargest(5, 'Comics')[['Name', 'Comics']
+# funcao para aplicar uma condicional pegando os 5 maiores valores de uma coluna 
+    
 def add_conditial(variable, principal_column, reference_column):
     cond = variable.nlargest(10, principal_column)[[reference_column, principal_column]].drop_duplicates()
     return cond
 
 
-
+# funcao filtra as colunas do dataframe e prepara-la pra criar um grafico
 def Filter_comic_class(conditional, reference_column, principal_column):
     filter_ = (
     conditional.groupby([reference_column, principal_column])
@@ -470,7 +467,7 @@ def Filter_comic_class(conditional, reference_column, principal_column):
     return filter_
     
 
-
+# funcao que recebe valores para criar um grafico com matplotlib
 def visual_plot(variable, x_column, y_column, x_lable, y_lable, title ):
     sns.barplot(x=x_column, y=y_column, data=variable, palette="Blues")
     plt.xlabel(x_lable)
@@ -509,6 +506,7 @@ top_10_xmen_world = Filter_comic_class(top_comics_xmen_world, 'Name', 'Comics')
 visual_plot(top_10_xmen_world, "Name", "Comics", "Name", "Number of Comics", "The Top 10 in X-men's world with more comics" )
 
 
+# funcao que recebe uma coluna e duas variaveis removendo os valores duplicados e devolve os 20 melhores personagens
 def add_conditial_20(variable, principal_column, reference_column):
     cond = variable.nlargest(20, principal_column)[[reference_column, principal_column]].drop_duplicates()
     return cond
@@ -524,6 +522,7 @@ top_marvels_world
 
 visual_plot(top_marvels_world, "Name", "Comics", "Name", "Number of Comics", "The Top 20 in Marvel's world with more comics" )
 
+# funcao que recebe uma coluna e duas variaveis da mesmas coluna removendo os valores duplicados
 
 def sort_two_columns_(df, column, column_one_value, column_two_value):
     sort = df[(df[column] == column_one_value) | (df[column] == column_two_value)].drop_duplicates()
