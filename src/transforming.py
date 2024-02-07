@@ -7,7 +7,7 @@ def build_dataframe (df):
     ts = int(time.time())
     
     # 3. Export
-    name = f"marvel-{ts}.csv"
+    name = f"marvel.main-{ts}.csv"
     df.to_csv(f"data/{name}", index=False)
     
     return df

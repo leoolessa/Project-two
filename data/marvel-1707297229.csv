@@ -1,0 +1,122 @@
+ID,Name,Comics,Series,Events,Stories,Class
+1009562,Scarlet Witch,580,197,17,650,Avengers
+1009707,Wasp,433,168,14,491,Avengers
+1009189,Black Widow,623,240,16,705,Avengers
+1009351,Hulk,1789,545,26,2679,Avengers
+1009338,Hawkeye,671,222,19,724,Avengers
+1009697,Vision,578,167,15,656,Avengers
+1009297,Falcon,207,77,7,239,Avengers
+1009215,Luke Cage,417,146,15,434,Avengers
+1009378,Jessica Jones,171,59,9,186,Avengers
+1009187,Black Panther,760,257,17,981,Avengers
+1009368,Iron Man,2732,680,31,4057,Avengers
+1009718,Wolverine,2678,742,42,3692,Avengers
+1009629,Storm,891,231,30,1033,Avengers
+1009487,Iron Patriot,6,5,3,7,Avengers
+1009282,Doctor Strange,946,328,22,1175,Avengers
+1009664,Thor,1891,555,27,2797,Avengers
+1009262,Daredevil,1266,329,17,1966,Avengers
+1009220,Captain America,2518,723,30,3679,Avengers
+1009362,Iceman,597,173,22,690,X-Men
+1010695,Surge,27,10,1,36,X-Men
+1009638,Sunspot,210,65,12,233,X-Men
+1010678,Hellion,28,13,2,31,X-Men
+1009718,Wolverine,2678,742,42,3692,Avengers
+1009425,Marrow,93,26,1,114,X-Men
+1009219,Cannonball,298,84,12,329,X-Men
+1009233,Chamber,57,18,1,57,X-Men
+1009268,Deadpool,916,260,15,1140,X-Men
+1009279,Doop,39,12,1,52,X-Men
+1011030,Prodigy,28,9,3,30,X-Men
+1011051,Strong Guy,73,14,2,79,X-Men
+1009381,Jubilee,278,68,10,315,X-Men
+1009512,Psylocke,445,105,21,516,X-Men
+1009499,Polaris,284,74,10,328,X-Men
+1009504,Professor X,437,142,15,442,X-Men
+1011428,Hope Summers,107,26,6,142,X-Men
+1009629,Storm,891,231,30,1033,Avengers
+1009310,Emma Frost,444,149,17,495,Villain_X-Men
+1009309,Forge,159,49,9,179,X-Men
+1011056,Multiple Man,60,16,2,70,X-Men
+1009182,Bishop,320,74,8,401,X-Men
+1009717,Wolfsbane,137,36,6,164,X-Men
+1011385,Cypher,27,7,2,34,X-Men
+1009705,Warpath,221,48,5,262,X-Men
+1009337,Havok,360,100,14,404,X-Men
+1009175,Beast,834,222,30,928,X-Men
+1009257,Cyclops,990,291,29,1106,X-Men
+1009214,Cable,453,127,12,620,X-Men
+1009722,X-23,285,72,5,300,X-Men
+1009408,Longshot,89,28,5,107,X-Men
+1009327,Jean Grey,241,111,13,261,X-Men
+1009496,Jean Grey,61,24,0,60,X-Men
+1009574,Shadowcat,15,11,0,15,X-Men
+1009285,Dust,25,11,0,26,X-Men
+1009555,Sage,45,17,0,50,X-Men
+1009580,Shatterstar,137,36,5,162,X-Men
+1009243,Colossus,708,170,27,866,X-Men
+1009159,Archangel,563,140,19,624,X-Men
+1011301,Anole,6,5,0,6,X-Men
+1009301,Fantomex,63,17,4,71,X-Men
+1009313,Gambit,527,136,14,655,X-Men
+1009546,Rogue,658,170,25,812,X-Men
+1009472,Nightcrawler,647,195,17,762,X-Men
+1011386,Karma,64,16,2,80,X-Men
+1011179,Pixie,53,15,4,54,X-Men
+1011082,Elixir,28,9,1,36,X-Men
+1011213,Feral,9,5,1,9,X-Men
+1010692,Rockslide,28,14,3,31,X-Men
+1009277,Domino,288,74,10,330,X-Men
+1009417,Magneto,484,177,21,520,Villain_X-Men
+1010359,The Hand,42,23,4,53,Villain_X-Men
+1009522,Pyro,58,23,5,63,Villain_X-Men
+1009465,Mystique,228,83,10,273,Villain_X-Men
+1011055,Gideon,22,11,1,24,Villain_X-Men
+1009393,Lady Deathstrike,114,37,2,118,Villain_X-Men
+1009554,Sabretooth,342,121,8,360,Villain_X-Men
+1009581,Sebastian Shaw,41,22,5,42,Villain_X-Men
+1009573,Shadow King,27,16,2,25,Villain_X-Men
+1009156,Apocalypse,132,62,6,133,Villain_X-Men
+1009295,Exodus,31,21,3,36,Villain_X-Men
+1009483,Onslaught,46,27,1,41,Villain_X-Men
+1009310,Emma Frost,444,149,17,495,Villain_X-Men
+1009164,Avalanche,47,20,7,54,Villain_X-Men
+1009591,Silver Samurai,39,22,0,32,Villain_X-Men
+1009478,Cassandra Nova,14,7,0,13,Villain_X-Men
+1009434,Mastermind,46,21,1,42,Villain_X-Men
+1009433,Master Mold,9,6,0,9,Villain_X-Men
+1009265,Dark Phoenix,21,15,1,21,Villain_X-Men
+1009382,Juggernaut,214,92,9,241,Villain_Avengers
+1009633,William Stryker,11,5,0,15,Villain_X-Men
+1009568,Selene,27,15,1,28,Villain_X-Men
+1009482,Omega Red,66,25,1,71,Villain_X-Men
+1009424,Marauders,29,16,2,33,Villain_X-Men
+1009171,Bastion,37,20,2,37,Villain_X-Men
+1009407,Loki,493,184,9,559,Villain_Avengers
+1009685,Ultron,118,54,6,131,Villain_Avengers
+1011076,Grandmaster,11,10,0,11,Villain_Avengers
+1011444,Living Laser,26,16,2,30,Villain_Avengers
+1009535,Red Skull,178,90,7,213,Villain_Avengers
+1011022,Super-Adaptoid,12,9,0,15,Villain_Avengers
+1009252,Crossbones,48,24,2,63,Villain_Avengers
+1010352,Madame Masque,41,18,3,46,Villain_Avengers
+1011138,Beyonder,25,13,2,24,Villain_Avengers
+1009148,Absorbing Man,102,52,5,114,Villain_Avengers
+1010726,M.O.D.O.K.,54,32,2,65,Villain_Avengers
+1011421,Lethal Legion,14,9,1,11,Villain_Avengers
+1009384,Kang,155,66,3,180,Villain_Avengers
+1011265,Sinister Six,34,11,1,39,Villain_Avengers
+1009537,Rhino,75,46,2,86,Villain_Avengers
+1010715,The Hood,41,14,3,43,Villain_Avengers
+1009328,Grim Reaper,33,18,1,32,Villain_Avengers
+1011279,Masters of Evil,24,8,0,23,Villain_Avengers
+1009599,Skrulls,156,66,5,165,Villain_Avengers
+1011482,Hela,63,31,5,76,Villain_Avengers
+1009648,Taskmaster,112,49,6,133,Villain_Avengers
+1011312,Korvac,15,9,0,17,Villain_Avengers
+1009382,Juggernaut,214,92,9,241,Villain_Avengers
+1009390,Klaw,58,30,2,62,Villain_Avengers
+1009144,A.I.M.,53,36,0,57,Villain_Avengers
+1011315,U-Foes,5,4,1,7,Villain_Avengers
+1009652,Thanos,296,143,8,322,Villain_Avengers
+1009199,Blob,78,33,7,81,Villain_Avengers

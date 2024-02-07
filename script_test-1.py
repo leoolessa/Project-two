@@ -4,14 +4,12 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from marvel import Marvel
 import seaborn as sns
-import os
+import time
 from keys import PUBLIC_KEY, PRIVATE_KEY
 
 
 
 marvel = Marvel(PUBLIC_KEY= PUBLIC_KEY, PRIVATE_KEY=PRIVATE_KEY)
-
-
 characters = marvel.characters
 
 
@@ -516,11 +514,11 @@ def add_conditial_20(variable, principal_column, reference_column):
 
 
 top_comics_marvel_world = add_conditial_20(marvel_all_characters_df, 'Comics', 'Name')
-top_comics_marvel_world
+
 
 
 top_marvels_world = Filter_comic_class(top_comics_marvel_world, 'Name', 'Comics')
-top_marvels_world
+
 
 
 visual_plot(top_marvels_world, "Name", "Comics", "Name", "Number of Comics", "The Top 20 in Marvel's world with more comics" )
@@ -535,9 +533,6 @@ def sort_two_columns_(df, column, column_one_value, column_two_value):
 # Calcular a porcentagem de Vingadores em relação ao total
 total_avengers_comics_ = sort_two_columns_(marvel_all_characters_df, 'Class', 'Avengers', 'Villain_Avengers')
 total_xmen_comics_ = sort_two_columns_(marvel_all_characters_df, 'Class', 'X-Men', 'Villain_X-Men')
-total_xmen_comics_
-
-
 
 
 percentage_avengers = (total_avengers_comics_['Comics'].sum() / (total_avengers_comics_['Comics'].sum() + total_xmen_comics_['Comics'].sum())) * 100
@@ -545,10 +540,7 @@ percentage_avengers = (total_avengers_comics_['Comics'].sum() / (total_avengers_
 print(f"A porcentagem de comics dos Vingadores em relação ao total é: {percentage_avengers:.2f}%")
 
 
-
 result_df = pd.DataFrame({'Equipe': ['Vingadores'], 'Porcentagem': [percentage_avengers]})
-
-
 
 
 percentage_avengers = (total_avengers_comics_['Comics'].sum() / (total_avengers_comics_['Comics'].sum() + total_xmen_comics_['Comics'].sum())) * 100
@@ -558,8 +550,6 @@ percentage_xmen = 100 - percentage_avengers  # Porcentagem dos X-Men
 # Criar DataFrame com os resultados
 result_df = pd.DataFrame({'Class': ['Avengers', 'X-Men'], 'Percentage': [percentage_avengers, percentage_xmen]})
 print(result_df)
-
-
 
 
 visual_plot(result_df, "Class", "Percentage", "Class", "Percentage", 'Percentage of Avengers and X-Men Comics in Relation to the Total')
@@ -573,5 +563,15 @@ lab = result_df['Class']
 perc.plot.pie(autopct="%.1f%%",labels=lab, textprops={'fontsize':14}, colors=sns.color_palette('Blues'))
 
 
-plt.savefig('teste.png', format='png')
-plt.show()
+
+def build_dataframe (df):
+    # 0. Get time
+    ts = int(time.time())
+    
+    # 3. Export
+    name = f"marvel-{ts}.csv"
+    df.to_csv(f"data/{name}", index=False)
+    
+    return df
+
+build_dataframe (marvel_all_characters_df)
