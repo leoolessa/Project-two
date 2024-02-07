@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 from marvel import Marvel
 import seaborn as sns
 from keys import PUBLIC_KEY, PRIVATE_KEY
-
+import os
 import src.extracting as ext
 import src.transforming as tr
 import src.visualization as viz
@@ -24,7 +24,7 @@ marvel_all_characters_df = ext.get_character(ext.marvel_all_characters)
 
 
 
-# Visualization
+# 2. Visualization
 
 # Calling the data to create the graphics 
 viz.visual_plot(viz.top_avengers, "Name", "Comics", "Name", "Number of Comics", 'The Top 8 Avengers with more comics')
@@ -35,9 +35,13 @@ viz.visual_plot(viz.top_8_avengers_world, "Name", "Comics", "Name", "Number of C
 
 viz.visual_plot(viz.top_marvels_world, "Name", "Comics", "Name", "Number of Comics", "The Top 20 in Marvel's world with more comics" )
 
-viz.perc.plot.pie(autopct="%.1f%%",labels=lab, textprops={'fontsize':14}, colors=sns.color_palette('Blues'))
+viz.perc.plot.pie(autopct="%.1f%%",labels=viz.lab, textprops={'fontsize':14}, colors=sns.color_palette('Blues'))
 
 
 
-# 2. Transforming
+# 3. Transforming
 tr.build_dataframe (marvel_all_characters_df)
+
+
+# 4. Voice feedback
+os.system("Report created!")
