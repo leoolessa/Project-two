@@ -33,6 +33,10 @@ viz.visual_plot(viz.top_villain, "Name", "Comics", "Name", "Number of Comics", '
 
 viz.visual_plot(viz.top_8_avengers_world, "Name", "Comics", "Name", "Number of Comics", "The Top 8 in Avenger's world with more comics" )
 
+viz.visual_plot(viz.top_marvels_world, "Name", "Comics", "Name", "Number of Comics", "The Top 20 in Marvel's world with more comics" )
+
+viz.perc.plot.pie(autopct="%.1f%%",labels=lab, textprops={'fontsize':14}, colors=sns.color_palette('Blues'))
+
 
 
 # 2. Transforming

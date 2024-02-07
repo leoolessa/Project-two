@@ -83,6 +83,15 @@ def add_conditial(variable, principal_column, reference_column):
     cond = variable.nlargest(8, principal_column)[[reference_column, principal_column]]
     return cond
 
+def add_conditial_20(variable, principal_column, reference_column):
+    cond = variable.nlargest(20, principal_column)[[reference_column, principal_column]].drop_duplicates()
+    return cond
+
+
+def sort_two_columns_(df, column, column_one_value, column_two_value):
+    sort = df[(df[column] == column_one_value) | (df[column] == column_two_value)].drop_duplicates()
+    return sort
+
 
 def visual_plot(variable, x_column, y_column, x_lable, y_lable, title ):
     sns.barplot(x=x_column, y=y_column, data=variable, palette="Blues")
@@ -95,50 +104,13 @@ def visual_plot(variable, x_column, y_column, x_lable, y_lable, title ):
 
 
 
-#---------------------------------------------------------------------------------------------------------------------------------
-
-# Test percentage
-
-
-def sort_two_columns_(df, column, column_one_value, column_two_value):
-    sort = df[(df[column] == column_one_value) | (df[column] == column_two_value)].drop_duplicates()
-    return sort
-
-
-# Calcular a porcentagem de Vingadores em relação ao total
-total_avengers_comics_ = sort_two_columns_(ext.marvel_all_characters_df, 'Class', 'Avengers', 'Villain_Avengers')
-total_xmen_comics_ = sort_two_columns_(ext.marvel_all_characters_df, 'Class', 'X-Men', 'Villain_X-Men')
-
-
-percentage_avengers = (total_avengers_comics_['Comics'].sum() / (total_avengers_comics_['Comics'].sum() + total_xmen_comics_['Comics'].sum())) * 100
-percentage_xmen = 100 - percentage_avengers  
-
-
-# Criar DataFrame com os resultados
-result_df = pd.DataFrame({'Class': ['Avengers', 'X-Men'], 'Percentage': [percentage_avengers, percentage_xmen]})
-
-
-
-
-
-
-perc = result_df['Percentage']
-lab = result_df['Class']
-
-visual_plot(result_df, "Class", "Percentage", "Class", "Percentage", 'Percentage of Avengers and X-Men Comics in Relation to the Total')
-
-perc.plot.pie(autopct="%.1f%%",labels=lab, textprops={'fontsize':14}, colors=sns.color_palette('Blues'))
-
-
-
-#---------------------------------------------------------------------------------------------------------------------------------
-
 # Calling the sort functions
 avengers_hero_sort = sort_one_column(ext.marvel_all_characters_df,'Class', 'Avengers')
 
 avengers_villain_sort = sort_one_column(ext.marvel_all_characters_df,'Class', 'Villain_Avengers')
 
 avengers_and_villain_sort = sort_two_columns(ext.marvel_all_characters_df, 'Class', 'Avengers', 'Villain_Avengers')
+
 
 # Calling the conditional function
 top_avengers = add_conditial(avengers_hero_sort, 'Comics', 'Name')
@@ -147,6 +119,9 @@ top_villain = add_conditial(avengers_villain_sort, 'Comics', 'Name')
 
 top_comics_avengers_world = add_conditial(avengers_and_villain_sort, 'Comics', 'Name')
 
+top_comics_marvel_world = add_conditial_20(ext.marvel_all_characters_df, 'Comics', 'Name')
+
+
 # Calling the Filter function
 top_8_avengers = Filter_comic_class(top_avengers, 'Name', 'Comics')
 
@@ -154,13 +129,23 @@ top_8_villain = Filter_comic_class(top_villain, 'Name', 'Comics')
 
 top_8_avengers_world = Filter_comic_class(top_comics_avengers_world, 'Name', 'Comics')
 
+top_marvels_world = Filter_comic_class(top_comics_marvel_world, 'Name', 'Comics')
 
-"""
 
-# Visualization
-visual_plot(top_avengers, "Name", "Comics", "Name", "Number of Comics", 'The Top 8 Avengers with more comics')
+# Conclusion code
+total_avengers_comics_ = sort_two_columns_(ext.marvel_all_characters_df, 'Class', 'Avengers', 'Villain_Avengers')
+total_xmen_comics_ = sort_two_columns_(ext.marvel_all_characters_df, 'Class', 'X-Men', 'Villain_X-Men')
 
-visual_plot(top_villain, "Name", "Comics", "Name", "Number of Comics", 'The Top 8 Avengers Villains with more comics')
 
-visual_plot(top_8_avengers_world, "Name", "Comics", "Name", "Number of Comics", "The Top 8 in Avenger's world with more comics" )
-"""
+percentage_avengers = (total_avengers_comics_['Comics'].sum() / (total_avengers_comics_['Comics'].sum() + total_xmen_comics_['Comics'].sum())) * 100
+percentage_xmen = 100 - percentage_avengers  
+
+
+result_df = pd.DataFrame({'Class': ['Avengers', 'X-Men'], 'Percentage': [percentage_avengers, percentage_xmen]})
+
+
+perc = result_df['Percentage']
+lab = result_df['Class']
+
+perc.plot.pie(autopct="%.1f%%",labels=lab, textprops={'fontsize':14}, colors=sns.color_palette('Blues'))
+
