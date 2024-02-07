@@ -132,7 +132,7 @@ top_8_avengers_world = Filter_comic_class(top_comics_avengers_world, 'Name', 'Co
 top_marvels_world = Filter_comic_class(top_comics_marvel_world, 'Name', 'Comics')
 
 
-# Conclusion code
+# Conclusion code (Percentage)
 total_avengers_comics_ = sort_two_columns_(ext.marvel_all_characters_df, 'Class', 'Avengers', 'Villain_Avengers')
 total_xmen_comics_ = sort_two_columns_(ext.marvel_all_characters_df, 'Class', 'X-Men', 'Villain_X-Men')
 
@@ -147,5 +147,4 @@ result_df = pd.DataFrame({'Class': ['Avengers', 'X-Men'], 'Percentage': [percent
 perc = result_df['Percentage']
 lab = result_df['Class']
 
-perc.plot.pie(autopct="%.1f%%",labels=lab, textprops={'fontsize':14}, colors=sns.color_palette('Blues'))
 

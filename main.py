@@ -27,6 +27,8 @@ marvel_all_characters_df = ext.get_character(ext.marvel_all_characters)
 # 2. Visualization
 
 # Calling the data to create the graphics 
+viz.perc.plot.pie(autopct="%.1f%%",labels=viz.lab, textprops={'fontsize':14}, colors=sns.color_palette('Blues'))
+
 viz.visual_plot(viz.top_avengers, "Name", "Comics", "Name", "Number of Comics", 'The Top 8 Avengers with more comics')
 
 viz.visual_plot(viz.top_villain, "Name", "Comics", "Name", "Number of Comics", 'The Top 8 Avengers Villains with more comics')
@@ -34,9 +36,6 @@ viz.visual_plot(viz.top_villain, "Name", "Comics", "Name", "Number of Comics", '
 viz.visual_plot(viz.top_8_avengers_world, "Name", "Comics", "Name", "Number of Comics", "The Top 8 in Avenger's world with more comics" )
 
 viz.visual_plot(viz.top_marvels_world, "Name", "Comics", "Name", "Number of Comics", "The Top 20 in Marvel's world with more comics" )
-
-viz.perc.plot.pie(autopct="%.1f%%",labels=viz.lab, textprops={'fontsize':14}, colors=sns.color_palette('Blues'))
-
 
 
 # 3. Transforming
