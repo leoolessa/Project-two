@@ -4,7 +4,9 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from marvel import Marvel
 import seaborn as sns
+import os
 from keys import PUBLIC_KEY, PRIVATE_KEY
+
 
 
 marvel = Marvel(PUBLIC_KEY= PUBLIC_KEY, PRIVATE_KEY=PRIVATE_KEY)
@@ -474,6 +476,7 @@ def visual_plot(variable, x_column, y_column, x_lable, y_lable, title ):
     plt.ylabel(y_lable)
     plt.title(title)
     plt.xticks(rotation=45, ha='right')
+    plt.savefig(f'images/test-{title}.jpg', format='jpg')
     plt.show()
 
 
@@ -570,4 +573,5 @@ lab = result_df['Class']
 perc.plot.pie(autopct="%.1f%%",labels=lab, textprops={'fontsize':14}, colors=sns.color_palette('Blues'))
 
 
-
+plt.savefig('teste.png', format='png')
+plt.show()
